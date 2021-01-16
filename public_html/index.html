@@ -147,7 +147,7 @@
           };
         }
 
-        document.getElementsByClassName('plus')[0].onclick = () => {
+        document.getElementsByClassName('plus')[0].onpointerup = () => {
           if ('mediaSession' in navigator) {
             navigator.mediaSession.metadata = new MediaMetadata({
               title: 'Andrea a bordo!',
@@ -158,19 +158,6 @@
                 {src: 'images/icon-350x350.png', sizes: '350x350', type: 'image/png'}
               ]
             });
-
-//            navigator.mediaSession.setActionHandler('play', () => {
-//            });
-//            navigator.mediaSession.setActionHandler('pause', () => {
-//            });
-//            navigator.mediaSession.setActionHandler('seekbackward', () => {
-//            });
-//            navigator.mediaSession.setActionHandler('seekforward', () => {
-//            });
-//            navigator.mediaSession.setActionHandler('previoustrack', () => {
-//            });
-//            navigator.mediaSession.setActionHandler('nexttrack', () => {
-//            });
           }
 
           setTimeout(() => document.querySelector('audio').play(), 5000);
