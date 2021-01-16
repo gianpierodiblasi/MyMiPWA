@@ -1,6 +1,6 @@
 /* global self, caches */
 
-var cacheName = 'mymi-pwa-1.2.14';
+var cacheName = 'mymi-pwa-1.2.15';
 var filesToCache = [
   './',
   './index.html',
@@ -9,7 +9,8 @@ var filesToCache = [
   './images/icon-250x250.png',
   './images/icon-350x350.png',
   './images/MyMi-White.svg',
-  './images/BabyHappy.png'
+  './images/BabyHappy.png',
+  './audio/alarm.mp3'
 ];
 
 self.oninstall = e => e.waitUntil(caches.open(cacheName).then(cache => cache.addAll(filesToCache)));
