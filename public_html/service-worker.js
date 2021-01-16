@@ -4,10 +4,10 @@ var cacheName = 'mymi-pwa';
 var filesToCache = [
   './',
   './index.html',
-  './images/icon-32x32.png',
-  './images/icon-180x180.png',
-  './images/icon-192x192.png',
-  './images/icon-270x270.png',
+  './images/icon-40x40.png',
+  './images/icon-230x230.png',
+  './images/icon-250x250.png',
+  './images/icon-350x350.png',
   './images/MyMi-White.svg',
   './images/BabyHappy.png'
 ];

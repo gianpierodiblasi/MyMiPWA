@@ -2,28 +2,28 @@
   "manifest_version": 1,
   "version": "1.0.0",
   "short_name": "MyMi",
-  "name": "MyMi PWA",
+  "name": "MyMi",
   "description": "MyMi Progressive Web App",
   "icons": [{
-      "src": "./images/icon-32x32.png",
-      "sizes": "32x32",
+      "src": "./images/icon-40x40.png",
+      "sizes": "40x40",
       "type": "image/png"
     }, {
-      "src": "./images/icon-180x180.png",
-      "sizes": "180x180",
+      "src": "./images/icon-230x230.png",
+      "sizes": "230x230",
       "type": "image/png"
     }, {
-      "src": "./images/icon-192x192.png",
-      "sizes": "192x192",
+      "src": "./images/icon-250x250.png",
+      "sizes": "250x250",
       "type": "image/png",
       "purpose": "any maskable"
     }, {
-      "src": "./images/icon-270x270.png",
-      "sizes": "270x270",
+      "src": "./images/icon-350x350.png",
+      "sizes": "350x350",
       "type": "image/png"
     }, {
       "src": "./images/BabyHappy.png",
-      "sizes": "671x671",
+      "sizes": "1200x1200",
       "type": "image/png"
     }
   ],
