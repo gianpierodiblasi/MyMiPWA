@@ -1,8 +1,9 @@
 /* global self, caches */
 
-var cacheName = 'mymi-pwa-1.1.1';
+var cacheName = 'mymi-pwa-1.2.5';
 var filesToCache = [
   './',
+  './index.html',
   './images/icon-40x40.png',
   './images/icon-230x230.png',
   './images/icon-250x250.png',
@@ -11,11 +12,11 @@ var filesToCache = [
   './images/BabyHappy.png'
 ];
 
-self.addEventListener('install', e => e.waitUntil(caches.open(cacheName).then(cache => cache.addAll(filesToCache))));
-self.addEventListener('fetch', e => e.respondWith(caches.match(e.request).then(response => response || fetch(e.request))));
+self.oninstall = e => e.waitUntil(caches.open(cacheName).then(cache => cache.addAll(filesToCache)));
+self.onfetch = e => e.respondWith(caches.match(e.request).then(response => response || fetch(e.request)));
 
-self.addEventListener('message', e => {
+self.onmessage = e => {
   if (e.data.action === 'skipWaiting') {
     self.skipWaiting();
   }
-});
+};

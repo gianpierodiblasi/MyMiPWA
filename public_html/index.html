@@ -116,31 +116,65 @@
 
     <div class="notification">Nuova versione disponibile<br>premi qui per aggiornare</div>
 
+    <audio loop>
+      <source src="audio/alarm.mp3" type="audio/mp3"/>
+    </audio>
+
     <script>
       window.onload = () => {
         if ('serviceWorker' in navigator) {
           let newWorker, refreshing;
-          document.getElementsByClassName('notification')[0].addEventListener('click', () => newWorker.postMessage({action: 'skipWaiting'}));
+          document.getElementsByClassName('notification')[0].onclick = () => newWorker.postMessage({action: 'skipWaiting'});
 
           navigator.serviceWorker.register('./service-worker.js').then(reg => {
-            reg.addEventListener('updatefound', () => {
+            reg.onupdatefound = () => {
               newWorker = reg.installing;
 
-              newWorker.addEventListener('statechange', () => {
+              newWorker.onstatechange = () => {
                 if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
                   document.getElementsByClassName('notification')[0].style.visibility = 'visible';
                 }
-              });
-            });
+              };
+            };
           });
 
-          navigator.serviceWorker.addEventListener('controllerchange', () => {
+          navigator.serviceWorker.oncontrollerchange = () => {
             if (!refreshing) {
+              caches.keys().then(keys => keys.forEach(key => caches.delete(key)));
               window.location.reload();
               refreshing = true;
             }
-          });
+          };
         }
+
+        document.getElementsByClassName('plus')[0].onclick = () => {
+          if ('mediaSession' in navigator) {
+            navigator.mediaSession.metadata = new MediaMetadata({
+              title: 'Andrea a bordo!',
+              artwork: [
+                {src: 'images/icon-40x40.png', sizes: '40x40', type: 'image/png'},
+                {src: 'images/icon-230x230.png', sizes: '230x230', type: 'image/png'},
+                {src: 'images/icon-250x250.png', sizes: '250x250', type: 'image/png'},
+                {src: 'images/icon-350x350.png', sizes: '350x350', type: 'image/png'}
+              ]
+            });
+
+//            navigator.mediaSession.setActionHandler('play', () => {
+//            });
+//            navigator.mediaSession.setActionHandler('pause', () => {
+//            });
+//            navigator.mediaSession.setActionHandler('seekbackward', () => {
+//            });
+//            navigator.mediaSession.setActionHandler('seekforward', () => {
+//            });
+//            navigator.mediaSession.setActionHandler('previoustrack', () => {
+//            });
+//            navigator.mediaSession.setActionHandler('nexttrack', () => {
+//            });
+          }
+
+          setTimeout(() => document.querySelector('audio').play(), 5000);
+        };
       };
     </script>
   </body>
