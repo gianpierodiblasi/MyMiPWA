@@ -60,7 +60,7 @@
         padding: 5px;
       }
 
-      .plus {
+      input {
         background: white;
         position: absolute;
         width: 60px;
@@ -68,12 +68,12 @@
         border-radius: 30px;
         bottom: 25px;
         right: 25px;
-        text-align: center
-      }
-      .plus span {
-        font-family: sans-serif;
-        font-size: 55px;
+        border: none;
         color: #C20735;
+        font-size: 55px;
+      }
+      input:focus {
+        outline: none;
       }
 
       .notification {
@@ -110,9 +110,7 @@
         <span class="bordo">A BORDO</span>
       </div>
     </div>
-    <div class="plus">
-      <span>+</span>
-    </div>
+    <input type="button" value="+"/>
 
     <div class="notification">Nuova versione disponibile<br>premi qui per aggiornare</div>
 
@@ -147,7 +145,7 @@
           };
         }
 
-        document.getElementsByClassName('plus')[0].onpointerup = () => {
+        document.querySelector("input").onclick = () => {
           if ('mediaSession' in navigator) {
             navigator.mediaSession.metadata = new MediaMetadata({
               title: 'Andrea a bordo!',
