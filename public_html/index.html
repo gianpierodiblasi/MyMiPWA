@@ -107,7 +107,7 @@
       <div>
         <img src="images/MyMi-White.svg" alt="MyMi" class="MyMi">        
       </div>
-      <span class="version">1.2.13</span>
+      <span class="version">1.2.14</span>
       <div>        
         <img src="images/BabyHappy.png" alt="happy" class="BabyHappy"/>
       </div>
@@ -163,8 +163,15 @@
               ]
             });
           }
-          alert("Click");
-          setTimeout(() => document.querySelector('audio').play(), 5000);
+
+          document.querySelector("input").style.color = "white";
+          document.querySelector("input").style.background = "#C20735";
+          setTimeout(() => {
+            document.querySelector("input").style.color = "#C20735";
+            document.querySelector("input").style.background = "white";
+
+            setTimeout(() => document.querySelector('audio').play(), 5000);
+          }, 1000);
         };
       };
     </script>
