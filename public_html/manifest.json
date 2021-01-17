@@ -1,6 +1,6 @@
 {
   "manifest_version": 1,
-  "version": "1.2.15",
+  "version": "1.2.20",
   "short_name": "MyMi",
   "name": "MyMi",
   "description": "MyMi Progressive Web App",
@@ -23,7 +23,7 @@
       "type": "image/png"
     }, {
       "src": "./images/BabyHappy.png",
-      "sizes": "1200x1200",
+      "sizes": "700x700",
       "type": "image/png"
     }
   ],

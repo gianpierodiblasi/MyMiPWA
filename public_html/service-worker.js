@@ -1,6 +1,6 @@
 /* global self, caches */
 
-var cacheName = 'mymi-pwa-1.2.15';
+var cacheName = 'mymi-pwa-1.2.20';
 var filesToCache = [
   './',
   './index.html',
@@ -10,6 +10,7 @@ var filesToCache = [
   './images/icon-350x350.png',
   './images/MyMi-White.svg',
   './images/BabyHappy.png',
+  './images/BabyWorried.png',
   './audio/alarm.mp3'
 ];
 

@@ -62,7 +62,8 @@
         color: white;
         font-family: sans-serif;
         font-size: 20px;
-        padding: 5px;
+        border-radius: 25px;
+        padding: 5px 10px;
       }
 
       input {
@@ -107,12 +108,12 @@
       <div>
         <img src="images/MyMi-White.svg" alt="MyMi" class="MyMi">        
       </div>
-      <span class="version">1.2.15</span>
+      <span class="version">1.2.20</span>
       <div>        
         <img src="images/BabyHappy.png" alt="happy" class="BabyHappy"/>
       </div>
       <div class="message">
-        <span class="andrea">Andrea</span>
+        <span class="andrea">Andrea è</span>
         <span class="bordo">A BORDO</span>
       </div>
     </div>
@@ -154,12 +155,13 @@
         document.querySelector("input").onclick = () => {
           if ('mediaSession' in navigator) {
             navigator.mediaSession.metadata = new MediaMetadata({
-              title: 'Andrea a bordo!',
+              title: 'Andrea è A BORDO',
               artwork: [
                 {src: 'images/icon-40x40.png', sizes: '40x40', type: 'image/png'},
                 {src: 'images/icon-230x230.png', sizes: '230x230', type: 'image/png'},
                 {src: 'images/icon-250x250.png', sizes: '250x250', type: 'image/png'},
-                {src: 'images/icon-350x350.png', sizes: '350x350', type: 'image/png'}
+                {src: 'images/icon-350x350.png', sizes: '350x350', type: 'image/png'},
+                {src: 'images/BabyWorried.png', sizes: '700x700', type: 'image/png'}
               ]
             });
           }
