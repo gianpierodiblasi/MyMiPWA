@@ -1,6 +1,6 @@
 /* global self, caches */
 
-var cacheName = 'mymi-pwa-1.2.20';
+var cacheName = 'mymi-pwa-1.2.21';
 var filesToCache = [
   './',
   './index.html',
